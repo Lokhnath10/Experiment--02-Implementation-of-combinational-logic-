@@ -1,7 +1,7 @@
 # Experiment 02  Implementation-of-combinational-logic
 Implementation of combinational logic gates
- #### REGISTER NUMBER:23005860
- #### NAME:MASINA SREE KARSH
+ #### REGISTER NUMBER:23004865
+ #### NAME:Lokhnath
 ### AIM:
 To implement the given logic function verify its operation in Quartus using Verilog programming.
  F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
@@ -51,19 +51,31 @@ A combinational circuit is a circuit in which the output depends on the present 
 
 
 ### Program:
-![image](https://github.com/vignesh-777/Experiment--02-Implementation-of-combinational-logic-/assets/139842402/0137e83a-d23b-4127-99b2-01e41dfe2325)
-
+```
+module exp2(A,B,C,D,F1);
+input A,B,C,D;
+output F1;
+wire x1,x2,x3,x4,x5;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2= A&(~C)&(~D);
+assign x3= (~B)&(C)&(~D);
+assign x4= (~A)&(B)&(C)&(D);
+assign x5=(B)&(~C)&(D);
+assign F1=x1|x2|x3|x4|x5;
+endmodule
+```
 
 
 ### RTL REALIZATION:
+![Screenshot 2023-11-20 100643](https://github.com/Lokhnath10/Experiment--02-Implementation-of-combinational-logic-/assets/138969918/99b02ec1-3e60-4941-99bf-8010de22fd79)
 
-![image](https://github.com/vignesh-777/Experiment--02-Implementation-of-combinational-logic-/assets/139842402/9f7536a1-6786-457f-85dd-a48dbe2207e3)
+
 
 ### TIMING DIAGRAM:
 ![image](https://github.com/vignesh-777/Experiment--02-Implementation-of-combinational-logic-/assets/139842402/57944421-cebe-4b08-9372-91451b75641f)
 
 ### TRUTH TABLE:
-![image](https://github.com/vignesh-777/Experiment--02-Implementation-of-combinational-logic-/assets/139842402/65e244e3-e7ea-495f-9a4f-8de8f2a2b0b8)
+![WhatsApp Image 2023-11-24 at 3 09 25 PM](https://github.com/Lokhnath10/Experiment--02-Implementation-of-combinational-logic-/assets/138969918/aeb4ff48-fb45-43b3-b4b5-ff4ae9bf0a21)
 
 ### Result:
 Thus the given logic functions are implemented using  and their operations are verified using Verilog programming.
